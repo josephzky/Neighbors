@@ -101,7 +101,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	// Parse from body of request to get a json object.
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headerx", "Content-Type,Authorization")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,Authorization")
 
 	user := r.Context().Value("user")
 	claims := user.(*jwt.Token).Claims
