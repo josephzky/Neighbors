@@ -28,7 +28,7 @@ const (
 	BT_INSTANCE = "neighbors-post"
 	// Needs to update this URL if you deploy it to cloud.
 	BUCKET_NAME = "post-images-213000"
-	ES_URL      = "http://35.193.114.17:9200"
+	ES_URL      = "http://104.154.48.95:9200"
 )
 
 type Location struct {
