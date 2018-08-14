@@ -20,13 +20,11 @@ import (
 )
 
 const (
-	DISTANCE = "200km"
-	INDEX    = "neighbors"
-	TYPE     = "post"
-	// Needs to update
+	DISTANCE    = "200km"
+	INDEX       = "neighbors"
+	TYPE        = "post"
 	PROJECT_ID  = "neighbors-213000"
 	BT_INSTANCE = "neighbors-post"
-	// Needs to update this URL if you deploy it to cloud.
 	BUCKET_NAME = "post-images-213000"
 	ES_URL      = "http://104.154.48.95:9200"
 )
