@@ -133,14 +133,14 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
-	ctx := context.Background()
+	//ctx := context.Background()
 
-	_, attrs, err := saveToGCS(ctx, file, BUCKET_NAME, id)
-	if err != nil {
-		http.Error(w, "GCS is not setup", http.StatusInternalServerError)
-		fmt.Printf("GCS is not setup %v\n", err)
-		panic(err)
-	}
+	//_, attrs, err := saveToGCS(ctx, file, BUCKET_NAME, id)
+	//if err != nil {
+	//	http.Error(w, "GCS is not setup", http.StatusInternalServerError)
+	//	fmt.Printf("GCS is not setup %v\n", err)
+	//	panic(err)
+	//}
 
 	p.Url = attrs.MediaLink
 
@@ -148,7 +148,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	saveToES(p, id)
 
 	// save to BigTable
-	saveToBigTable(p, id)
+	//saveToBigTable(p, id)
 }
 
 func saveToBigTable(p *Post, id string) {
@@ -175,7 +175,6 @@ func saveToBigTable(p *Post, id string) {
 		return
 	}
 	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
-
 }
 
 func saveToGCS(ctx context.Context, r io.Reader, bucketName string, name string) (*storage.ObjectHandle, *storage.ObjectAttrs, error) {
